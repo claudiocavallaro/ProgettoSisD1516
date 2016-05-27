@@ -9,11 +9,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.teamdev.progettosisd.MainActivity"
+    tools:context=".Activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/textMain"
+        android:textSize="16dp"
+        android:text="Choose CREATE if you want to initialize the network or JOIN if you want to join an existing peer"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE"
+        android:layout_below="@+id/textMain"
+        android:id="@+id/buttonCreate"
+        android:background="@drawable/button_draw"
+        android:textColor="#FFFFFF"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOIN"
+        android:id="@+id/buttonJoin"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_draw"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/buttonCreate"
+        android:layout_marginTop="20dp"/>
+
 </RelativeLayout>

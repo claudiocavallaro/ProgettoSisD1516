@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         Button createButton = (Button) findViewById(R.id.buttonCreate);
         Button joinButton = (Button) findViewById(R.id.buttonJoin);
 
+        //PROVA
+
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

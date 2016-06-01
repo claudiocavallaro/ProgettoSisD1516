@@ -2,8 +2,6 @@ package com.teamdev.progettosisd.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -12,9 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.teamdev.progettosisd.Persistenza.AsyncStart;
 import com.teamdev.progettosisd.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    private AsyncStart asyncStart = new AsyncStart(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +24,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //PROVA
+        AsyncStart.setContext(this);
+
         Button createButton = (Button) findViewById(R.id.buttonCreate);
         Button joinButton = (Button) findViewById(R.id.buttonJoin);
-
-        //PROVA
 
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Ho cliccato create", Toast.LENGTH_LONG).show();
+                asyncStart.execute();
             }
         });
 

@@ -150,8 +150,13 @@ public class Peer {
 
             case RingProtocol.TEXT: {
 
-                String string = (String) message.getContent();
-                System.out.println(string);
+                if(message.getRecipient() == this.myAddress) {
+                    String string = (String) message.getContent();
+                    System.out.println(string);
+                }
+                else {
+                    sendMessage(message, this.successor, port);
+                }
 
                 break;
 

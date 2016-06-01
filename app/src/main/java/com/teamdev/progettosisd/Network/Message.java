@@ -3,16 +3,25 @@ package com.teamdev.progettosisd.Network;
  * Created by claud on 01/06/2016.
  */
 import java.io.Serializable;
+import java.net.InetAddress;
 
 public class Message implements Serializable {
 
     private byte type;
     private Object content;
+    private InetAddress recipient;
 
     public Message(byte type, Object content) {
         super();
         this.type = type;
         this.content = content;
+    }
+
+    public Message(byte type, Object content, InetAddress recipient) {
+        super();
+        this.type = type;
+        this.content = content;
+        this.recipient = recipient;
     }
 
     public byte getType() {
@@ -29,6 +38,14 @@ public class Message implements Serializable {
 
     public void setContent(Object content) {
         this.content = content;
+    }
+
+    public InetAddress getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(InetAddress recipient) {
+        this.recipient = recipient;
     }
 
 }

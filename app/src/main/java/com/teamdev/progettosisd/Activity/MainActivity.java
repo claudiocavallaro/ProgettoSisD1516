@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //PROVA
         Button createButton = (Button) findViewById(R.id.buttonCreate);
         Button joinButton = (Button) findViewById(R.id.buttonJoin);
 

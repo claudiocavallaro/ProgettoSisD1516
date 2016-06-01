@@ -44,7 +44,7 @@ public class AsyncStart extends AsyncTask<Void, Void, Void> {
             e.printStackTrace();
         }
 
-        int port1 = 80;
+        int port1 = 8090;
         String name1 = "P1";
         Peer peer1 = new Peer(localhost, port1, name1);
         peer1.startListening();

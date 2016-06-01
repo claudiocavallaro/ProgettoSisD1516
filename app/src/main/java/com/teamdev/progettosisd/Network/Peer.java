@@ -104,6 +104,7 @@ public class Peer {
             case RingProtocol.JOIN: {
 
                 System.out.println("I PROCESS A JOIN");
+                System.out.println(source.toString());
 
                 this.setSuccessor(source);
 

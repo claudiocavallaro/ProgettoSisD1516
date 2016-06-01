@@ -15,4 +15,12 @@ public class ActivityListening extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listening);
     }
+
+    //PROVA COMMIT
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

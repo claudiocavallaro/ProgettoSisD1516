@@ -10,12 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.teamdev.progettosisd.Persistenza.AsyncJoin;
 import com.teamdev.progettosisd.Persistenza.AsyncStart;
 import com.teamdev.progettosisd.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private AsyncStart asyncStart = new AsyncStart(this);
+    private AsyncJoin asyncJoin = new AsyncJoin(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         AsyncStart.setContext(this);
+        AsyncJoin.setContext(this);
 
         Button createButton = (Button) findViewById(R.id.buttonCreate);
         Button joinButton = (Button) findViewById(R.id.buttonJoin);
@@ -39,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Ho cliccato join", Toast.LENGTH_LONG).show();
+                asyncJoin.execute();
             }
         });
 
